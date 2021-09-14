@@ -19,7 +19,7 @@
 body {
     min-height: 100vh;
     font-family: Roboto, sans-serif;
-    background: black
+    background: black;
 }
 
 body.modal-open {
@@ -30,12 +30,13 @@ body.modal-open {
 body.modal-open .modal {
     visibility: visible;
     opacity: 1;
+    pointer-events: all;
 }
 
 .wrapper {
     position: relative;
-    min-height: 100vh;
-    z-index: 0;
+    max-height: calc(100vh - 40px);
+    min-height: 800px;
 }
 
 .wrapper > * {
@@ -140,7 +141,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: relative;
     top: 24px;
     align-self: flex-start;
     z-index: 5;
@@ -229,8 +230,16 @@ header {
 }
 
 .hero {
-    padding-top: 80px;
-    width: calc(50% - 300px);
+    /*padding-top: 80px;
+    */width: calc(50% - 300px);
+    position: relative;
+    top: 50%;
+    margin-top: -40px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 
 @keyframes fadein {
@@ -261,7 +270,7 @@ header {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 88px;
     line-height: 80px;
     font-family: FuturaBT, sans-serif;
     margin-top: 40px;
@@ -269,7 +278,7 @@ h1 {
 }
 
 p {
-    font-size: 20px;
+    font-size: 24px;
     color: rgba(0, 0, 0, 0.6);
     font-weight: 500;
     line-height: 1.5;
@@ -308,8 +317,8 @@ p {
 .content__demo {
     display: flex;
     align-items: flex-end;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top: 80px;
     left: 50%;
     z-index: 2;
     transform: translateX(-50%);
@@ -330,7 +339,7 @@ p {
     justify-content: flex-start;
     align-items: center;
     flex: 1;
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -340,8 +349,8 @@ p {
 
 .phone {
     width: 440px;
-    max-height: 800px;
-    height: 100%;
+    max-height: 890px;
+    height: 890px;
     background: url(/assets/images/iphone.png) center top no-repeat;
     background-size: cover;
     position: relative;
@@ -620,19 +629,25 @@ p {
 }
 
 footer {
-    width: calc(50% - 300px);
-    margin-top: 80px;
-    padding-bottom: 80px;
+    position: relative;
+    background: black;
+    padding: 0 0 56px;
 }
 
 footer p {
     font-size: 16px;
     font-weight: 400;
-    margin-top: 16px;
+    margin: 0 0 24px;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 footer a {
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
 }
 
 /** Modal **/
@@ -640,6 +655,9 @@ footer a {
     visibility: hidden;
     opacity: 0;
     transition: all 0.2s ease;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .modal__main {
@@ -761,4 +779,92 @@ footer a {
 
 .beta-form--error .form__error {
     display: block;
+}
+
+/** Benefits Section **/
+.benefits {
+    /* background: black; */
+    padding: 200px 0 80px;
+    position: relative;
+}
+
+.benefits:before {
+    content: '';
+    position: absolute;
+    height: 70%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    transform: skewY(3deg);
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+    -o-transform: skewY(3deg);
+}
+
+.benefits:after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 0;
+}
+
+.container--benefits {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.benefits__tile {
+    margin: 0 48px;
+    position: relative;
+    padding-bottom: 56px;
+}
+
+.benefits__tile:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #13F56E, #61C288 50%);
+    border-radius: 200px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    -ms-border-radius: 200px;
+    -o-border-radius: 200px;
+}
+
+.benefits__tile:first-of-type {
+    margin-left: 0
+}
+
+.benefits__tile:last-of-type {
+    margin-right: 0;
+}
+
+.benefits__tile p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 32px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.benefits__tile h2 {
+    color: #13F56E;
+    background: linear-gradient(to right, #13F56E, #61C288 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 64px;
+    line-height: 72px;
+    font-family: FuturaBT, sans-serif;
+    padding-left: 5px;
+    margin-top: 40px;
 }
