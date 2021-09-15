@@ -209,21 +209,29 @@
         padding: 184px 0 20px;
     }
 
-    .benefits__heading, .mission p {
+    .benefits__heading, 
+    .mission p,
+    .section-heading {
         font-size: 48px;
         line-height: 56px;
     }
 
-    .benefits__tile h3 {
-        font-size: 32px;
-        line-height: 40px;
+    .heading-supporter {
+        font-size: 18px;
     }
 
-    .container--benefits {
+    .benefits__tile h3 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .container--benefits,
+    .members {
         display: block;
     }
 
-    .benefits__tile {
+    .benefits__tile,
+    .member__tile {
         margin: 0 0 24px 0;
     }
 
@@ -234,8 +242,8 @@
     }
 
     .benefits__tile p {
-        font-size: 18px;
-        margin-top: 24px;
+        font-size: 20px;
+        margin-top: 32px;
     }
 
     .benefits__tile img {
@@ -244,11 +252,39 @@
     }
 
     footer {
-        margin-top: -20px;
+        margin-top: 40px;
     }
 
     .mission  {
         padding: 80px 0;
+    }
+
+    .member__tile {
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+
+    .member__tile img {
+        width: 100px;
+        height: 100px;
+        margin-right: 24px;
+    }
+
+    .member__title {
+        display: block
+    }
+
+    .member__name {
+        margin-top: 0;
+    }
+
+    .team {
+        padding-bottom: 0;
+    }
+
+    footer .container {
+        display: block
     }
 }
 
