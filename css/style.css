@@ -45,10 +45,10 @@ body.modal-open .modal {
 .wrapper:after,
 .wrapper:before {
     content: '';
-    position: fixed;
+    position: absolute;
     width: 50%;
     top: 0;
-    bottom: 0;
+    height: 100%;
     z-index: -1;
 }
 
@@ -72,10 +72,10 @@ body.modal-open .modal {
     top: 0;
     left: 0;
 
-    --gradient-color-1: #F1FFE6;
-    --gradient-color-2: #F9FFBF;
-    --gradient-color-3: #F9FFE5;
-    --gradient-color-4: #F9FFBF;  
+    --gradient-color-1: #F1EAD8;
+    --gradient-color-2: #FEF397;
+    --gradient-color-3: #BED386;
+    --gradient-color-4: #CCD98B;  
 
     transform: translateX(-100%);
     animation: 1s ease 0.4s forwards expand-light;
@@ -90,9 +90,6 @@ body.modal-open .modal {
     width: 100%;
     transform: translateX(0);
     background: #020202;
-    /*animation: 1s ease 0.4s forwards contract-dark;
-    -webkit-animation: 1s ease 0.4s forwards contract-dark;
-     */:;
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -281,8 +278,13 @@ p {
 }
 
 .button {
-    background: #1ACA5F;
-    box-shadow: 0px 0px 30px rgba(26, 202, 95, 0.4);
+    background: linear-gradient(to right, #333, #111);
+    box-shadow: 
+        0px 2px 2px rgba(116, 125, 88, 0.254),
+        0px 4px 4px rgba(116, 125, 88, 0.254),
+        0px 8px 8px rgba(116, 125, 88, 0.254),
+        0px 16px 16px rgba(116, 125, 88, 0.254),
+        0px 32px 32px rgba(116, 125, 88, 0.254);
     border-radius: 500px;
     -webkit-border-radius: 500px;
     -moz-border-radius: 500px;
@@ -654,11 +656,19 @@ footer a:hover {
     width: calc(100% - 80px);
     max-width: 500px;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 32px;
     background: linear-gradient(281.13deg, #FEDFDC 0%, #CDE7C7 50%);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 .modal__main p.form-heading {
@@ -708,12 +718,15 @@ footer a:hover {
     cursor: pointer;
     padding: 12px 40px;
     margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .modal__main .button--cancel {
     color: rgba(0, 0, 0, 0.5);
     background: transparent;
-    border: 1px solid #1ACA5F;
+    box-shadow: none;
+    /* border: 1px solid #1ACA5F; */
     opacity: 1;
     visibility: visible;
     text-align: center;
@@ -730,7 +743,7 @@ footer a:hover {
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .beta-form .button--disabled {
@@ -820,7 +833,8 @@ footer a:hover {
     line-height: 1.5;
 }
 
-.benefits__heading {
+.benefits__heading,
+.mission p {
     color: white;
     font-size: 64px;
     line-height: 72px;
@@ -844,36 +858,36 @@ footer a:hover {
     letter-spacing: 0.5px;
 }
 
-.mission-team {
-    position: relative;
-    padding: 0 0 160px;
-    background: black;
-}
-
-.container--mission-team {
-    display: flex;
-}
-
 .mission {
-    flex: 1;
-    margin-right: 80px;
-}
-
-.team {
-    flex: 1;
-    margin-left: 80px;
-}
-
-.mission h2 {
-    color: #fff;
-    font-size: 56px;
-    line-height: 64px;
-    font-family: FuturaBT, sans-serif;
+    padding: 200px 0;
+    background: url(/assets/images/gradient-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    background-position: top center;
 }
 
 .mission p {
-    margin-top: 0;
-    margin-bottom: 24px;
-    color: white;
-    opacity: 0.6;
+    font-size: 60px;
+    line-height: 68px;
+    color: #222;
+}
+
+.mission__heading {
+    display: inline-block;
+    margin: 0 auto;
+    color: #222;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }

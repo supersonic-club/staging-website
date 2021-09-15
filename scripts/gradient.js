@@ -523,7 +523,7 @@ function normalizeColor(hexCode) {
         e(this, "minigl", void 0),
         e(this, "scrollObserver", void 0),
         e(this, "amp", 320),
-        e(this, "seed", 5),
+        e(this, "seed", 50),
         e(this, "freqX", 14e-5),
         e(this, "freqY", 29e-5),
         e(this, "freqDelta", 1e-5),
@@ -621,7 +621,7 @@ function normalizeColor(hexCode) {
           playing: true
         }),
         document.querySelectorAll("canvas").length < 1
-          ? console.log("DID NOT LOAD HERO STRIPE CANVAS")
+          ? console.log("DID NOT LOAD HERO CANVAS")
           : ((this.minigl = new MiniGl(this.el, null, null, !0)),
             requestAnimationFrame(() => {
               this.el &&
@@ -693,7 +693,7 @@ function normalizeColor(hexCode) {
               value: this.amp
             }),
             noiseSpeed: new this.minigl.Uniform({
-              value: 10
+              value: 5
             }),
             noiseFlow: new this.minigl.Uniform({
               value: 3
